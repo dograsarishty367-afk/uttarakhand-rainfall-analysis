@@ -1,76 +1,135 @@
-# Flood Prediction Using Machine Learning
+# Uttarakhand Rainfall Analysis
 
 ## Project Overview
-This project predicts the probability of flooding using environmental and geographical factors such as rainfall intensity, river management, deforestation, drainage systems, and urbanization.
-This is a beginner machine learning project that predicts flood probability using environmental data.
+
+This project analyzes historical rainfall data for **Uttarakhand** to understand rainfall patterns and identify periods of extreme rainfall that may increase landslide risk.
+
+The script processes rainfall data, calculates monthly averages, detects extreme rainfall events, and visualizes rainfall patterns using charts and heatmaps.
+
+The goal of the project is to explore seasonal rainfall trends and highlight months or years with unusually high rainfall.
 
 ---
 
 ## Dataset
-The dataset contains 50,000 samples with 21 features representing different environmental conditions.
 
-Important features include:
-- MonsoonIntensity
-- TopographyDrainage
-- RiverManagement
-- Deforestation
-- Urbanization
-- ClimateChange
-- DrainageSystems
-- PopulationScore
-- WetlandLoss
-- PoliticalFactors
+The dataset contains historical rainfall data for Uttarakhand.
 
-Target variable:
-FloodProbability
+Columns included in the dataset:
+
+- Year
+- JAN
+- FEB
+- MAR
+- APR
+- MAY
+- JUN
+- JUL
+- AUG
+- SEP
+- OCT
+- NOV
+- DEC
+- Annual
+- JF
+- MAM
+- JJAS
+- OND
+
+All rainfall values are measured in **millimeters (mm)**.
 
 ---
 
-## Model Performance
-R² Score ≈ 0.73  
-Mean Squared Error: very low
+## Libraries Used
+
+The project uses the following Python libraries:
+
+- pandas → data processing and analysis
+- matplotlib → data visualization
+- seaborn → heatmap visualization
+
+---
+
+## Analysis Workflow
+
+The script performs the following steps:
+
+1. Load rainfall dataset using **pandas**
+2. Extract monthly rainfall columns (January–December)
+3. Calculate **average rainfall for each month**
+4. Detect **extreme rainfall events (>200 mm)**
+5. Estimate **landslide risk levels** based on rainfall intensity
+6. Calculate **total annual rainfall**
+7. Identify **years with the highest rainfall**
+8. Generate rainfall visualizations
 
 ---
 
 ## Visualizations
-This project includes:
-- Flood probability distribution
-- Correlation heatmap
-- Actual vs predicted plot
-- Feature importance graph
+
+The project generates two main visualizations:
+
+### Average Monthly Rainfall
+
+A bar chart showing the **average rainfall for each month**.
+
+### Rainfall Heatmap
+
+A heatmap showing rainfall intensity across **years and months**.
+
+### Visualization Output
+
+![Rainfall Visualization](outputs/rainfall_visualizations.png)
 
 ---
 
 ## Project Structure
-flood_prediction_project
+
+```
+uttarakhand-rainfall-analysis
 │
-├── flood_prediction.py
-├── flood.csv
+├── data
+│   └── rainfall_uttarakhand.csv
+│
+├── outputs
+│   └── rainfall_visualizations.png
+│
+├── src
+│   └── rainfall_analysis.py
+│
+├── requirements.txt
 └── README.md
+```
 
 ---
 
-## How to Run
+## How to Run the Project
 
-Clone the repository
+Clone the repository:
 
-git clone https://github.com/dograsarishty367-afk/flood-prediction.git
+```
+git clone https://github.com/dograsarishty367-afk/uttarakhand-rainfall-analysis.git
+```
 
-Install libraries
+Move into the project directory:
 
-pip install pandas numpy matplotlib seaborn scikit-learn
+```
+cd uttarakhand-rainfall-analysis
+```
 
-Run the model
+Install required libraries:
 
-python3 flood_prediction.py
+```
+pip install -r requirements.txt
+```
 
----
+Run the analysis script:
 
-## Future Improvements
-- Use real rainfall and river level data
-- Integrate real-time weather APIs
+```
+python src/rainfall_analysis.py
+```
 
 ---
 
 ## Author
+
 Sarishty Dogra
